@@ -58,12 +58,12 @@
     }
 
     .site-header {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--line);
     }
 
     .header-inner {
-      min-height: 88px;
+      min-height: 104px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -71,22 +71,13 @@
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
     }
 
     .brand-main {
-      height: 60px;
+      height: 92px;
       width: auto;
-    }
-
-    .brand-app {
-      height: 44px;
-      width: 44px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.12);
-      flex-shrink: 0;
     }
 
     .btn {
@@ -143,15 +134,15 @@
     }
 
     .hero-product-icon {
-      height: 40px;
-      width: 40px;
-      border-radius: 10px;
+      height: 46px;
+      width: 46px;
+      border-radius: 12px;
       box-shadow: 0 6px 18px rgba(17, 24, 39, 0.12);
       flex-shrink: 0;
     }
 
     .hero-product-name {
-      font-size: 15px;
+      font-size: 20px;
       font-weight: 700;
       color: #1f2937;
       letter-spacing: 0.1px;
@@ -344,14 +335,22 @@
     }
 
     .site-footer {
-      padding: 26px 0 46px;
+      padding: 32px 0 52px;
       color: var(--muted);
       font-size: 14px;
       text-align: center;
     }
 
-    .site-footer a {
+    .footer-email {
+      display: inline-block;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .footer-privacy {
+      display: inline-block;
       color: var(--primary);
+      margin-top: 6px;
     }
 
     @media (max-width: 980px) {
@@ -377,20 +376,11 @@
       }
 
       .header-inner {
-        min-height: 78px;
-      }
-
-      .brand {
-        gap: 10px;
+        min-height: 88px;
       }
 
       .brand-main {
-        height: 50px;
-      }
-
-      .brand-app {
-        height: 36px;
-        width: 36px;
+        height: 72px;
       }
 
       h1 {
@@ -415,13 +405,12 @@
 </head>
 
 <body>
-  <div class="version-bar">v4 – branding fix</div>
+  <div class="version-bar">v5 – logo scale + app icon move + footer tidy</div>
 
   <header class="site-header">
     <div class="container header-inner">
       <a href="/v2.html" class="brand" aria-label="AIssess home">
         <img src="/assets/logos/aissess-logo-v1.png" alt="AIssess logo" class="brand-main">
-        <img src="/assets/logos/urgency_bar_icon_1024.png" alt="Urgency Bar app icon" class="brand-app">
       </a>
 
       <a href="#" class="btn btn-primary">Install App</a>
@@ -580,8 +569,8 @@
   </main>
 
   <footer class="site-footer">
-    Contact: support@aissess.ai<br>
-    <a href="/privacy.html">Privacy Policy</a>
+    <a href="mailto:support@aissess.ai" class="footer-email">support@aissess.ai</a><br>
+    <a href="/privacy.html" class="footer-privacy">Privacy Policy</a>
   </footer>
 </body>
 </html>
