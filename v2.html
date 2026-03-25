@@ -10,33 +10,33 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      background: #f7f7f7;
       color: #111;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 40px 20px 80px;
     }
 
-    .hero {
+    .header {
       text-align: center;
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
 
     .logo {
-      width: 80px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 36px;
+      width: 140px;
       margin-bottom: 10px;
     }
 
-    h2 {
-      font-size: 20px;
+    h1 {
+      font-size: 34px;
+      margin: 10px 0;
+    }
+
+    .sub {
+      font-size: 18px;
       color: #444;
       margin-bottom: 20px;
     }
@@ -45,45 +45,79 @@
       display: inline-block;
       background: #2f4bb8;
       color: white;
-      padding: 12px 20px;
+      padding: 14px 22px;
       border-radius: 6px;
       text-decoration: none;
-      margin-top: 10px;
       font-weight: bold;
+      margin-top: 10px;
     }
 
     .section {
-      margin-bottom: 80px;
+      margin-top: 60px;
     }
 
-    .section h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 10px;
+      border: 1px solid #e5e5e5;
     }
 
-    .visual img {
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .image {
       width: 100%;
       border-radius: 8px;
       border: 1px solid #ddd;
     }
 
-    .video iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 8px;
+    .caption {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
     }
 
-    .grid {
+    .steps {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      text-align: center;
     }
 
-    .benefits, .trust {
+    .step {
+      font-size: 15px;
+    }
+
+    .step img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .bullets {
       line-height: 1.8;
       color: #333;
+    }
+
+    .video {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     footer {
@@ -94,12 +128,8 @@
     }
 
     @media (max-width: 768px) {
-      .grid {
+      .steps {
         grid-template-columns: 1fr;
-      }
-
-      .video iframe {
-        height: 300px;
       }
     }
   </style>
@@ -109,78 +139,91 @@
 
   <div class="container">
 
-    <!-- HERO -->
-    <div class="hero">
+    <!-- HEADER / HERO -->
+    <div class="header">
       <img src="/assets/logos/aissess-logo-v1.png" class="logo">
 
-      <h1>Urgency Bar</h1>
-      <h2>Increase sales with real low stock urgency in seconds</h2>
+      <h1>Increase sales with real low stock urgency</h1>
 
-      <a href="#" class="cta">Install & Go Live in 60 Seconds</a>
+      <div class="sub">
+        Add a live urgency bar to your product pages in under 60 seconds.
+      </div>
+
+      <a href="#" class="cta">Install & Go Live</a>
     </div>
 
-    <!-- PRODUCT -->
-    <div class="section visual">
-      <h3>See it live on your store</h3>
+    <!-- PROOF -->
+    <div class="section">
+      <div class="card">
+        <h2>See it live on your store</h2>
 
-      <img src="/assets/UrgencyBarLiveonDemoSite1600-900v3.0.png">
+        <img src="/assets/UrgencyBarLiveonDemoSite1600-900v3.0.png" class="image">
 
-      <p style="font-size:14px; color:#666; margin-top:10px;">
-        Turn real inventory into immediate buying decisions
-      </p>
-    </div>
-
-    <!-- VIDEO -->
-    <div class="section video">
-      <h3>Watch how it works</h3>
-
-      <iframe src="https://www.youtube.com/embed/m11XZZ3iTh4"></iframe>
+        <div class="caption">
+          Real inventory → real urgency → faster buying decisions
+        </div>
+      </div>
     </div>
 
     <!-- HOW IT WORKS -->
     <div class="section">
-      <h3>How it works</h3>
+      <div class="card">
+        <h2>Live in 3 steps</h2>
 
-      <div class="grid">
-        <div>
-          <img src="/assets/UrgencyBarScreenTwo1600-900v2.0.png">
-        </div>
-        <div>
-          Install the app and enable the urgency bar in your theme settings.
+        <div class="steps">
+          <div class="step">
+            <img src="/assets/UrgencyBarScreenTwo1600-900v2.0.png">
+            Install and enable the bar
+          </div>
+
+          <div class="step">
+            <img src="/assets/UrgencyBarScreenThree1600-900v3.0.png">
+            Customise your style
+          </div>
+
+          <div class="step">
+            Go live instantly
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="grid" style="margin-top:40px;">
-        <div>
-          Choose your style, layout, and messaging to match your store.
-        </div>
-        <div>
-          <img src="/assets/UrgencyBarScreenThree1600-900v3.0.png">
-        </div>
-      </div>
+    <!-- VIDEO -->
+    <div class="section">
+      <div class="card">
+        <h2>Watch it working</h2>
 
-      <div style="margin-top:40px;">
-        Go live and start increasing conversions immediately.
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/m11XZZ3iTh4"></iframe>
+        </div>
       </div>
     </div>
 
     <!-- BENEFITS -->
-    <div class="section benefits">
-      <h3>Why it works</h3>
+    <div class="section">
+      <div class="card">
+        <h2>Why it works</h2>
 
-      Increase conversions using real stock urgency<br>
-      Live in under 60 seconds<br>
-      Matches your store automatically<br>
-      No code required
+        <div class="bullets">
+          Real inventory creates genuine urgency<br>
+          Live in under 60 seconds<br>
+          Matches your store automatically<br>
+          No code required
+        </div>
+      </div>
     </div>
 
     <!-- TRUST -->
-    <div class="section trust">
-      <h3>Built for Shopify stores</h3>
+    <div class="section">
+      <div class="card">
+        <h2>Built for Shopify stores</h2>
 
-      Works with Dawn, Sense, Craft and more<br>
-      Lightweight and fast<br>
-      Safe and reliable
+        <div class="bullets">
+          Works with Dawn, Sense, Craft and more<br>
+          Lightweight and fast<br>
+          Safe and reliable
+        </div>
+      </div>
     </div>
 
     <!-- FOOTER -->
