@@ -70,9 +70,23 @@
       gap: 20px;
     }
 
-    .brand img {
-      height: 64px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-main {
+      height: 60px;
       width: auto;
+    }
+
+    .brand-app {
+      height: 44px;
+      width: 44px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.12);
+      flex-shrink: 0;
     }
 
     .btn {
@@ -119,6 +133,28 @@
       font-size: 12px;
       font-weight: 700;
       margin-bottom: 16px;
+    }
+
+    .hero-product {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 14px;
+    }
+
+    .hero-product-icon {
+      height: 40px;
+      width: 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.12);
+      flex-shrink: 0;
+    }
+
+    .hero-product-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1f2937;
+      letter-spacing: 0.1px;
     }
 
     h1 {
@@ -344,8 +380,17 @@
         min-height: 78px;
       }
 
-      .brand img {
-        height: 52px;
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-main {
+        height: 50px;
+      }
+
+      .brand-app {
+        height: 36px;
+        width: 36px;
       }
 
       h1 {
@@ -370,12 +415,13 @@
 </head>
 
 <body>
-  <div class="version-bar">v3 – design push</div>
+  <div class="version-bar">v4 – branding fix</div>
 
   <header class="site-header">
     <div class="container header-inner">
       <a href="/v2.html" class="brand" aria-label="AIssess home">
-        <img src="/assets/logos/aissess-logo-v1.png" alt="AIssess logo">
+        <img src="/assets/logos/aissess-logo-v1.png" alt="AIssess logo" class="brand-main">
+        <img src="/assets/logos/urgency_bar_icon_1024.png" alt="Urgency Bar app icon" class="brand-app">
       </a>
 
       <a href="#" class="btn btn-primary">Install App</a>
@@ -387,6 +433,12 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">SHOPIFY APP • URGENCY BAR</div>
+
+          <div class="hero-product">
+            <img src="/assets/logos/urgency_bar_icon_1024.png" alt="Urgency Bar icon" class="hero-product-icon">
+            <div class="hero-product-name">Urgency Bar</div>
+          </div>
+
           <h1>Turn low stock into more sales — instantly</h1>
           <p>
             Add real urgency to your product pages in under 60 seconds. No code.
