@@ -1,6 +1,5 @@
-v2.html
+<!-- FILE: /v2.html -->
 
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,255 +8,540 @@ v2.html
   <title>AIssess – Urgency Bar</title>
 
   <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --primary: #2f4fd7;
+      --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f6f7f9;
-      color: #111;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    header {
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0;
-    }
-
-    .logo {
-      height: 48px;
-    }
-
-    .cta {
-      background: #2f4fd7;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 0 60px;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #555;
-      max-width: 620px;
-      margin: 0 auto 24px;
-    }
-
-    .cta-main {
-      background: #2f4fd7;
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 12px;
-    }
-
-    .trust {
-      font-size: 14px;
-      color: #666;
-    }
-
-    .section {
-      padding: 70px 0;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-      padding: 24px;
-    }
-
-    .image-frame {
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-    }
-
-    .image-frame img {
-      width: 100%;
+    img {
+      max-width: 100%;
       display: block;
     }
 
-    .caption {
-      font-size: 14px;
-      color: #666;
-      margin-top: 10px;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .step {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #eee;
-      text-align: center;
-    }
-
-    .step img {
-      width: 100%;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      border: 1px solid #eee;
-    }
-
-    .video {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    }
-
-    .video iframe {
-      width: 100%;
-      height: 460px;
-      border: none;
-    }
-
-    h2 {
-      font-size: 26px;
-      margin-bottom: 20px;
-    }
-
-    .bullets {
-      line-height: 1.8;
-      color: #444;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      font-size: 14px;
-      color: #777;
-    }
-
-    footer a {
-      color: #2f4fd7;
+    a {
       text-decoration: none;
     }
 
-    @media (max-width: 900px) {
-      .steps {
+    .version-bar {
+      background: #111;
+      color: #fff;
+      font-size: 12px;
+      padding: 6px 10px;
+      text-align: center;
+      letter-spacing: 0.2px;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand img {
+      height: 52px;
+      width: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(47, 79, 215, 0.24);
+    }
+
+    .btn-secondary {
+      background: #eef2ff;
+      color: var(--primary);
+      border: 1px solid #dbe3ff;
+    }
+
+    .hero {
+      padding: 56px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 52px;
+      line-height: 1.02;
+      letter-spacing: -1.4px;
+    }
+
+    .hero-copy p {
+      margin: 0 0 22px;
+      font-size: 19px;
+      color: #4b5563;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+
+    .hero-card img {
+      border-radius: 12px;
+      border: 1px solid var(--line);
+    }
+
+    .section {
+      padding: 22px 0 34px;
+    }
+
+    .section-head {
+      margin-bottom: 20px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 720px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .step-media {
+      background: #f8fafc;
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .step-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .step-body {
+      padding: 16px;
+    }
+
+    .step-number {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .step-body h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .step-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .video-shell {
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #000;
+    }
+
+    .video-shell iframe {
+      width: 100%;
+      height: 560px;
+      border: 0;
+      display: block;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .benefit h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .benefit p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .trust-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .trust-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .trust-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .site-footer {
+      padding: 26px 0 46px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .site-footer a {
+      color: var(--primary);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .steps-grid,
+      .benefits-grid,
+      .trust-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: 34px;
+      h1 {
+        font-size: 40px;
+      }
+
+      .video-shell iframe {
+        height: 420px;
       }
     }
 
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .header-inner {
+        min-height: 74px;
+      }
+
+      .brand img {
+        height: 42px;
+      }
+
+      h1 {
+        font-size: 34px;
+        letter-spacing: -1px;
+      }
+
+      .hero {
+        padding: 36px 0 24px;
+      }
+
+      .hero-copy p,
+      .section-head p {
+        font-size: 16px;
+      }
+
+      .video-shell iframe {
+        height: 260px;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <div class="version-bar">v2 – design test</div>
 
-<header>
-  <div class="container nav">
-    <img src="/assets/logos/aissess-logo-v1.png" class="logo">
-    <a href="#" class="cta">Install App</a>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/v2.html" class="brand" aria-label="AIssess home">
+        <img src="/assets/logos/aissess-logo-v1.png" alt="AIssess logo">
+      </a>
 
-<section class="hero container">
-  <h1>Turn low stock into more sales — instantly</h1>
-  <p>Add real urgency to your product pages in seconds. No code. No disruption. Just more conversions.</p>
-
-  <a href="#" class="cta-main">Install & Go Live in 60 Seconds</a>
-
-  <div class="trust">
-    Works with your Shopify theme • No code required • Remove anytime
-  </div>
-</section>
-
-<section class="section container">
-  <div class="card">
-    <div class="image-frame">
-      <img src="/assets/UrgencyBarLiveonDemoSite1600-900v3.0.png">
+      <a href="#" class="btn btn-primary">Install App</a>
     </div>
-    <div class="caption">
-      Real inventory → real urgency → faster buying decisions
-    </div>
-  </div>
-</section>
+  </header>
 
-<section class="section container">
-  <h2>Live in 3 steps</h2>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">SHOPIFY APP • URGENCY BAR</div>
+          <h1>Turn low stock into more sales — instantly</h1>
+          <p>
+            Add real urgency to your product pages in under 60 seconds. No code.
+            No disruption. Just faster buying decisions from real inventory scarcity.
+          </p>
 
-  <div class="steps">
-    <div class="step">
-      <img src="/assets/UrgencyBarScreenTwo1600-900v2.0.png">
-      Install and enable the bar
-    </div>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary">Install & Go Live</a>
+            <a href="#video" class="btn btn-secondary">Watch Demo</a>
+          </div>
 
-    <div class="step">
-      <img src="/assets/UrgencyBarScreenThree1600-900v3.0.png">
-      Customise your style
-    </div>
+          <div class="hero-meta">
+            <span>No code required</span>
+            <span>Works with Shopify themes</span>
+            <span>Remove anytime</span>
+          </div>
+        </div>
 
-    <div class="step">
-      Go live instantly
-    </div>
-  </div>
-</section>
+        <div class="hero-card">
+          <img src="/assets/UrgencyBarLiveonDemoSite1600-900v3.0.png" alt="Urgency Bar live on a Shopify product page">
+        </div>
+      </div>
+    </section>
 
-<section class="section container">
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/m11XZZ3iTh4"></iframe>
-  </div>
-</section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Live in 3 steps</h2>
+          <p>Fast to understand. Fast to activate. Fast to start influencing buying behaviour.</p>
+        </div>
 
-<section class="section container">
-  <h2>Why it works</h2>
-  <div class="bullets">
-    Real inventory creates genuine urgency<br>
-    Live in under 60 seconds<br>
-    Matches your store automatically<br>
-    No code required
-  </div>
-</section>
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-media">
+              <img src="/assets/UrgencyBarScreenTwo1600-900v2.0.png" alt="Install and enable the urgency bar">
+            </div>
+            <div class="step-body">
+              <div class="step-number">STEP 1</div>
+              <h3>Install</h3>
+              <p>Add the app and enable the bar in your theme settings.</p>
+            </div>
+          </article>
 
-<section class="section container">
-  <h2>Built for Shopify stores</h2>
-  <div class="bullets">
-    Works with Dawn, Sense, Craft and more<br>
-    Lightweight and fast<br>
-    Safe and reliable
-  </div>
-</section>
+          <article class="step-card">
+            <div class="step-media">
+              <img src="/assets/UrgencyBarScreenThree1600-900v3.0.png" alt="Customise the urgency bar style">
+            </div>
+            <div class="step-body">
+              <div class="step-number">STEP 2</div>
+              <h3>Customise</h3>
+              <p>Adjust the look and message so it fits your store cleanly.</p>
+            </div>
+          </article>
 
-<footer>
-  Contact: support@aissess.ai<br>
-  <a href="/privacy.html">Privacy Policy</a>
-</footer>
+          <article class="step-card">
+            <div class="step-media" style="background:#f8fafc;">
+              <div style="padding:24px; text-align:center;">
+                <div style="font-size:12px; font-weight:800; color:#2f4fd7; margin-bottom:8px;">STEP 3</div>
+                <div style="font-size:28px; font-weight:800; line-height:1.1; margin-bottom:8px;">Go live</div>
+                <div style="font-size:15px; color:#6b7280;">Start turning real inventory scarcity into action.</div>
+              </div>
+            </div>
+            <div class="step-body">
+              <div class="step-number">STEP 3</div>
+              <h3>Convert</h3>
+              <p>Show urgency on product pages and push faster purchase decisions.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="video">
+      <div class="container">
+        <div class="section-head">
+          <h2>See it working</h2>
+          <p>For merchants who want the extra reassurance before installing.</p>
+        </div>
+
+        <div class="panel">
+          <div class="video-shell">
+            <iframe src="https://www.youtube.com/embed/m11XZZ3iTh4" title="Urgency Bar demo video" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why merchants install it</h2>
+          <p>The page should answer value first, not features first.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit">
+            <h3>Real urgency</h3>
+            <p>Uses genuine inventory scarcity instead of fake countdown gimmicks.</p>
+          </div>
+          <div class="benefit">
+            <h3>Fast to value</h3>
+            <p>Designed to get from install to live quickly, without technical friction.</p>
+          </div>
+          <div class="benefit">
+            <h3>Matches your store</h3>
+            <p>Customisable presentation helps the bar feel native, not bolted on.</p>
+          </div>
+          <div class="benefit">
+            <h3>No code required</h3>
+            <p>Simple for merchants, safe for stores, and easier to adopt with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Built for Shopify stores</h2>
+          <p>Clear reassurance for merchants and partners who care about safety and fit.</p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card">
+            <h3>Theme-friendly</h3>
+            <p>Designed for Shopify themes including Dawn, Sense and Craft.</p>
+          </div>
+          <div class="trust-card">
+            <h3>Lightweight</h3>
+            <p>Focused on simple urgency without turning the page into clutter.</p>
+          </div>
+          <div class="trust-card">
+            <h3>Easy to remove</h3>
+            <p>Low-risk adoption matters. Merchants need to feel in control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Contact: support@aissess.ai<br>
+    <a href="/privacy.html">Privacy Policy</a>
+  </footer>
 </body>
 </html>
-```
